@@ -41,6 +41,7 @@ public class LinkedList_Using_Collection {
 				System.out.println("Invalid\n");
 				break;
 			}
+			
 			System.out.println("Press 1 for continue and 0 for exit\n");
 			k = obj.nextInt();
 
