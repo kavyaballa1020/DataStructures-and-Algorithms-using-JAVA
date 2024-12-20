@@ -12,7 +12,7 @@ public class Binary_Search {
 		while (left <= right) {
 			mid = (left + right) / 2;
 			if (key == a[mid]) {
-				status=true;
+				status = true;
 				break;
 			} else if (key < a[mid]) {
 				right = mid - 1;
@@ -20,9 +20,9 @@ public class Binary_Search {
 				left = mid + 1;
 			}
 		}
-		if(status==true) {
+		if (status == true) {
 			System.out.println("Found");
-		}else {
+		} else {
 			System.out.println("Not Found");
 		}
 	}
