@@ -40,5 +40,4 @@ public class Graph_Matrix {
         g.addEdge(2, 3);
         g.display();
 	}
-
 }
