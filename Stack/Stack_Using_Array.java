@@ -29,7 +29,7 @@ class stack{
 		if(top==-1) {
 			System.out.println("Underflow");
 		}else {
-			for(int i=0;i<top;i++) {
+			for(int i=0;i<=top;i++) {
 				System.out.print(s[i]+" ");
 			}
 			System.out.println();
