@@ -42,6 +42,22 @@ public class LinkedList_Manual {
 		}
 	}
 
+	public void addPos(int data) {
+		size++;
+		node newnode = new node(data);
+		node temp = head;
+		int i = 1;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Position");
+		int pos = sc.nextInt();
+		while (i < pos - 1) {
+			temp = temp.next;
+			i++;
+		}
+		newnode.next = temp.next;
+		temp.next = newnode;
+	}
+
 	public void display() {
 		node temp;
 		temp = head;
@@ -85,6 +101,25 @@ public class LinkedList_Manual {
 		}
 	}
 
+	public void deletePosition() {
+		size--;
+		Scanner sc = new Scanner(System.in);
+		int i = 1;
+		System.out.println("Enter position");
+		int pos = sc.nextInt();
+		node temp = head;
+		node temp1 = temp;
+		if (pos > size) {
+			System.out.println("Invalid Position");
+		}
+		while (i < pos) {
+			temp1 = temp;
+			temp = temp.next;
+			i++;
+		}
+		temp1.next = temp.next;
+	}
+
 	public int getSize() {
 		return size;
 	}
@@ -110,38 +145,46 @@ public class LinkedList_Manual {
 		int k = 1;
 		while (k == 1) {
 			System.out.println(
-					"1. addFirst\n 2. addLast\n 3. deleteFirst\n 4. deleteLast\n 5. display\n 6. size\n 7. Reverse");
+					"1. addFirst\n 2. addLast\n 3. deleteFirst\n 4. deleteLast\n 5. display\n 6. size\n 7. Reverse\n 8. add at specific position \n 9. delete at specific position\n");
 			int ch = obj.nextInt();
 			switch (ch) {
-			case 1:
-				System.out.println("Enter Data");
-				int x = obj.nextInt();
-				ls.addFirst(x);
-				break;
-			case 2:
-				System.out.println("Enter Data");
-				int y = obj.nextInt();
-				ls.addLast(y);
-				break;
-			case 3:
-				ls.deleteFirst();
-				break;
-			case 4:
-				ls.deleteLast();
-				break;
-			case 5:
-				ls.display();
-				break;
-			case 6:
-				int z = ls.getSize();
-				System.out.println(z);
-				break;
-			case 7:
-				ls.reverseIterate();
-				break;
-			default:
-				System.out.println("Invalid\n");
-				break;
+				case 1:
+					System.out.println("Enter Data");
+					int x = obj.nextInt();
+					ls.addFirst(x);
+					break;
+				case 2:
+					System.out.println("Enter Data");
+					int y = obj.nextInt();
+					ls.addLast(y);
+					break;
+				case 3:
+					ls.deleteFirst();
+					break;
+				case 4:
+					ls.deleteLast();
+					break;
+				case 5:
+					ls.display();
+					break;
+				case 6:
+					int z = ls.getSize();
+					System.out.println(z);
+					break;
+				case 7:
+					ls.reverseIterate();
+					break;
+				case 8:
+					System.out.println("Enter Data");
+					int a = obj.nextInt();
+					ls.addPos(a);
+					break;
+				case 9:
+					ls.deletePosition();
+					break;
+				default:
+					System.out.println("Invalid\n");
+					break;
 			}
 			System.out.println("Press 1 for continue and 0 for exit\n");
 			k = obj.nextInt();
